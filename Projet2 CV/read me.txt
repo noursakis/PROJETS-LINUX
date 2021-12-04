@@ -1,0 +1,22 @@
+La premiére partie de ce projet consiste à crée une page HTML avec le 
+contenu du CV :une Photo ainsi q'un descriptif du parcours académique.
+Pour crée un page HTML sur raspberry , j'ai installé en premier lieu
+Apache2 avec la commande sudo apt install apache2.
+ensuite j'ai changé les droits avec sudo chwon -R pi:www-data/var/www/html
+et sudo chmod -R 770/var/www/html.
+pour vérifier que ma page html a été bien crée , je tape/
+wget -o veri_apache.html http://172.20.10.6(adresseIP DE LA CARTE).
+ensuite , pour ajouter le CV , j'accéde à /var/www/html
+j'ajoute la balise HTML avec sudo nano CVnoursakis.html.
+arrivons à ce niveau , si je tape l'url(l'adresse IP)sur le navigateur ,mon CV s'affiche
+la deuxiéme partie du projet consiste à crée un nom de domaine pour la
+page HTML(CVnoursakis par exemple), c'est là ou on doit 
+installer DNSMASK avec sudo apt install dnsmasq.
+aprés je procéde à la configuration , je décommente
+domain-needed , bogus-priv et expand-hosts ey j'ajoute domain=(mon
+nom de domaine) ensuite je restart dnsmasq aprés dans hosts j'ajoute 
+l'adresse IP suivie du nom de domaine .
+comme ça je pourrai utiliser ma raspberry pi comme un 
+serveur DNS
+
+
