@@ -1,0 +1,22 @@
+Le but de ce projet c'est en premier lieu d'afficher 
+la température de CPU de la carte , je l'ai fait avec la 
+commande vcgencmd measure_temp dans un bloc Execute (exec).
+en suite j'ai fait l'affichage avec deux graphes (chart et 
+Jauge) , un bouton nommé "actualiser"permet d'actualiser la valeur de la 
+température de CPU aprés chaque clic.
+La deuxiéme partie du projet c'est l'affichage de la température
+de Paris , à partir d'un API.
+j'ai fais un compte sur le site https://openweathermap.org/api
+pour obtenir un API key , que j'injecte par la suite dans le Node de
+Open weather.
+on fait la meme chose que pour la température de CPU on affiche 
+la température dans un graphe(Jauge dans ce cas là).
+J'ai ajouté un Graphe pour l'humidité également , un bouton 
+d'actualisation est également prévu .
+à la fin , j'ai ajouté l'affichages des températures minimales 
+et maximales ainsi que la vitesse du vent.
+On pourra le refaire avec tous les paramétres affichés dans la
+fenetre de déboggage .  
+
+
+
