@@ -1,0 +1,16 @@
+Projet1 : Calculatrice
+j'ai crée un Script bash que j'ai nommée Calcul avec la
+commande nano calcul.sh)
+par la suite , j'ai définis les opérations de base 
+que cette calculatrice peut effectuer soit la Sommation , 
+la division (exception de la division par zéro), 
+la multiplication ainsi que la soustraction.
+le programme explique au début les instructions à
+enter pour chaque opération mathématique (par exemple
+DIV pour la division) , il prend tout d'abord les valuers
+A et B , ensuite l'opérateur (avec une conditon sur
+la saisie de l'opérateur).
+avec une boucle case , et selon l'opérateur , on effectue
+l'opération mathématique voulue.
+à chaque fin d'opération mathématique, on demande à 
+l'opérateur s'il veut continuer Le calcul ou pas.
