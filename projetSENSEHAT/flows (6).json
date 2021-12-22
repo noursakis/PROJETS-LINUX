@@ -1,0 +1,464 @@
+[
+    {
+        "id": "0fdab4a49c5fdbf0",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "096c156957c1a815",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Temp",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d727bb399879c040",
+        "x": 490,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f37e4b689728edeb",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "582407d99c81e1cb"
+            ]
+        ]
+    },
+    {
+        "id": "582407d99c81e1cb",
+        "type": "exec",
+        "z": "0fdab4a49c5fdbf0",
+        "command": "sudo python3 temperature.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Temperature",
+        "x": 270,
+        "y": 60,
+        "wires": [
+            [
+                "096c156957c1a815"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ba96ca8777347b8f",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Press",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d727bb399879c040",
+        "x": 470,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0e8ea6841aa79741",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "daf2b3c8fa591c8a"
+            ]
+        ]
+    },
+    {
+        "id": "daf2b3c8fa591c8a",
+        "type": "exec",
+        "z": "0fdab4a49c5fdbf0",
+        "command": "sudo python3 pressure.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Pression",
+        "x": 280,
+        "y": 260,
+        "wires": [
+            [
+                "ba96ca8777347b8f"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1bd7615b3675e777",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Txt",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d727bb399879c040",
+        "x": 330,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ac48f694709a6074",
+        "type": "exec",
+        "z": "0fdab4a49c5fdbf0",
+        "command": "sudo python3 acceleration.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Acceleration",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "c2ea8e09f74f45ce"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "899004d8bfe7a423",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "ac48f694709a6074"
+            ]
+        ]
+    },
+    {
+        "id": "c2ea8e09f74f45ce",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Acc",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d727bb399879c040",
+        "x": 470,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "32e843c1e3a583fd",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello ! ",
+        "payloadType": "str",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "1bd7615b3675e777"
+            ]
+        ]
+    },
+    {
+        "id": "4805c86d8b5b279d",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Hum",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0243181f39e1a6ad",
+        "x": 490,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9c39564d19974154",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "60b5ae94e20e690d"
+            ]
+        ]
+    },
+    {
+        "id": "60b5ae94e20e690d",
+        "type": "exec",
+        "z": "0fdab4a49c5fdbf0",
+        "command": "sudo python3 humidity.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Humidité",
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "4805c86d8b5b279d"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d64baea55fba278f",
+        "type": "inject",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 500,
+        "wires": [
+            [
+                "5d641a4b1d74f9a3"
+            ]
+        ]
+    },
+    {
+        "id": "9ed680a5b8167102",
+        "type": "base64",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [
+                "c66803cbfa8f8546"
+            ]
+        ]
+    },
+    {
+        "id": "5d641a4b1d74f9a3",
+        "type": "file in",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "filename": "/home/pi/imagerp.png",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "9ed680a5b8167102"
+            ]
+        ]
+    },
+    {
+        "id": "c66803cbfa8f8546",
+        "type": "mqtt out",
+        "z": "0fdab4a49c5fdbf0",
+        "name": "",
+        "topic": "Image",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d727bb399879c040",
+        "x": 710,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d727bb399879c040",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.20.10.6",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "0243181f39e1a6ad",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.20.10.5",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]
