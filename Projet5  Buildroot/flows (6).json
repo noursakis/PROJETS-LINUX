@@ -1,0 +1,204 @@
+[
+    {
+        "id": "9bf8dbf095f7c829",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "78945eb50cb65587",
+        "type": "Generic BLE in",
+        "z": "9bf8dbf095f7c829",
+        "name": "test BLE",
+        "genericBle": "ea3690d1e0470777",
+        "useString": true,
+        "notification": true,
+        "x": 415,
+        "y": 320,
+        "wires": [
+            [
+                "c36020e310bc6fe3"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "b6837ecccf6babd7",
+        "type": "Generic BLE out",
+        "z": "9bf8dbf095f7c829",
+        "name": "",
+        "genericBle": "ea3690d1e0470777",
+        "x": 470,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9f16026f649fdcdd",
+        "type": "inject",
+        "z": "9bf8dbf095f7c829",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "f000aa0204514000b000000000000000",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 320,
+        "wires": [
+            [
+                "78945eb50cb65587",
+                "b6837ecccf6babd7"
+            ]
+        ]
+    },
+    {
+        "id": "c36020e310bc6fe3",
+        "type": "debug",
+        "z": "9bf8dbf095f7c829",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8c8b8d697960d78c",
+        "type": "inject",
+        "z": "9bf8dbf095f7c829",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "2a39",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 380,
+        "wires": [
+            [
+                "78945eb50cb65587"
+            ]
+        ]
+    },
+    {
+        "id": "ea3690d1e0470777",
+        "type": "Generic BLE",
+        "localName": "Mi 11 Lite 5G",
+        "address": "7d:00:14:df:9d:55",
+        "uuid": "7d0014df9d55",
+        "muteNotifyEvents": false,
+        "operationTimeout": "",
+        "characteristics": [
+            {
+                "uuid": "2a05",
+                "name": "Service Changed",
+                "type": "org.bluetooth.characteristic.gatt.service_changed",
+                "notifiable": false,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a00",
+                "name": "Device Name",
+                "type": "org.bluetooth.characteristic.gap.device_name",
+                "notifiable": false,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a01",
+                "name": "Appearance",
+                "type": "org.bluetooth.characteristic.gap.appearance",
+                "notifiable": false,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2aa6",
+                "name": "Central Address Resolution",
+                "type": "org.bluetooth.characteristic.central_address_resolution",
+                "notifiable": false,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "9954",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": true,
+                "writable": true,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "9953",
+                "name": "<Unnamed>",
+                "type": "(Custom Type)",
+                "notifiable": false,
+                "readable": true,
+                "writable": true,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a37",
+                "name": "Heart Rate Measurement",
+                "type": "org.bluetooth.characteristic.heart_rate_measurement",
+                "notifiable": true,
+                "readable": false,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a38",
+                "name": "Body Sensor Location",
+                "type": "org.bluetooth.characteristic.body_sensor_location",
+                "notifiable": false,
+                "readable": true,
+                "writable": false,
+                "writeWithoutResponse": false
+            },
+            {
+                "uuid": "2a39",
+                "name": "Heart Rate Control Point",
+                "type": "org.bluetooth.characteristic.heart_rate_control_point",
+                "notifiable": false,
+                "readable": false,
+                "writable": true,
+                "writeWithoutResponse": false
+            }
+        ]
+    }
+]
